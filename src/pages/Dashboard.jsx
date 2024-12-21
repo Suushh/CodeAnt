@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import Card from "../components/RepoCard"; // Ensure correct import path
+import Logo from "../assets/Images/Logo.png"; 
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faSyncAlt, faPlus } from "@fortawesome/free-solid-svg-icons";
 
@@ -77,34 +79,36 @@ const Dashboard = () => {
       />
 
       <div className="flex-1 p-4 bg-gray-50 border border-gray-300 rounded-lg shadow-md m-4 mb-0 overflow-y-hidden">
-        <header className="flex justify-between items-center mb-4">
-          <div>
-            <h1 className="text-2xl font-semibold">{selectedPage}</h1>
-            <p className="text-gray-600 mt-1">33 total repositories</p>
-            <div className="mt-4 relative">
-              <FontAwesomeIcon
-                icon={faSearch}
-                className="absolute left-2 top-3 text-gray-400"
-              />
+      <div className="lg:hidden flex items-center justify-between mb-4">
+          <img src={Logo} alt="Logo" className="h-12" />
+        </div>
+        {/* Header */}
+        <header className="flex flex-wrap justify-between items-center mb-4">
+          <div className="mb-4">
+            <h1 className="text-2xl font-bold">{selectedPage}</h1>
+            <p className="text-gray-500">33 total repositories</p>
+            <div className="relative mt-4">
+              <FontAwesomeIcon icon={faSearch} className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-400" />
               <input
                 type="text"
                 placeholder="Search Repositories..."
-                className="border border-gray-300 rounded-md p-2 pl-8 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full pl-8 pr-2 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
               />
             </div>
           </div>
 
-          <div className="flex space-x-4">
-            <button className="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-gray-300">
+          <div className="flex gap-2">
+            <button className="flex items-center gap-2 px-4 py-2 bg-gray-200 text-gray-800 rounded-md">
               <FontAwesomeIcon icon={faSyncAlt} />
               <span>Refresh All</span>
             </button>
-            <button className="bg-blue-500 text-white px-4 py-2 rounded-lg flex items-center space-x-2 hover:bg-blue-600">
+            <button className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-md">
               <FontAwesomeIcon icon={faPlus} />
               <span>Add Repository</span>
             </button>
           </div>
         </header>
+
 
         <section className="h-[calc(100%-120px)] overflow-y-auto">
           <div className="flex flex-col ">
