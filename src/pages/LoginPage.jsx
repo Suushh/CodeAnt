@@ -33,12 +33,12 @@ const LoginPage = ({ onLoginSuccess }) => {
 
   return (
     <div className="flex h-screen bg-gray-100">
-      {/* Left Sidebar Image (Visible only on large screens) */}
+      
       <div className="w-[45%] hidden lg:block">
         <img src={sidebarImage} alt="Login Illustration" className="w-full h-full" />
       </div>
 
-      {/* Right Login Section */}
+      
       <div className="w-full lg:w-[55%] flex justify-center items-center px-4">
         <div className="bg-white shadow-md rounded-lg p-8 w-full lg:w-[80%]">
           <div className="flex justify-center mb-6">
@@ -67,7 +67,7 @@ const LoginPage = ({ onLoginSuccess }) => {
             </div>
           </div>
 
-          {/* Options List */}
+          
           <div className="mt-6">
             {selectedOption === "SAAS" &&
               saasOptions.map((option, index) => (
