@@ -70,20 +70,22 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="flex h-screen">
+    <div className="flex h-full">
       <Sidebar
         userName={userName}
         pages={pages}
         selectedPage={selectedPage}
         onPageSelect={setSelectedPage}
+        
       />
 
-      <div className="flex-1 p-4 bg-gray-50 border border-gray-300 rounded-lg shadow-md m-4 mb-0 overflow-y-hidden">
-      <div className="lg:hidden flex items-center justify-between mb-4">
+      <div className="flex-1 p-4 bg-gray-50 border border-gray-300 rounded-lg shadow-md m-4">
+        <div className="lg:hidden flex items-center justify-between mb-4">
           <img src={Logo} alt="Logo" className="h-12" />
         </div>
+
         {/* Header */}
-        <header className="flex flex-wrap justify-between items-center mb-4">
+        <header className="flex justify-between items-center mb-4">
           <div className="mb-4">
             <h1 className="text-2xl font-bold">{selectedPage}</h1>
             <p className="text-gray-500">33 total repositories</p>
@@ -109,9 +111,9 @@ const Dashboard = () => {
           </div>
         </header>
 
-
-        <section className="h-[calc(100%-120px)] overflow-y-auto">
-          <div className="flex flex-col ">
+        {/* Section for repository cards with overflow */}
+        <section className="overflow-y-auto ">
+          <div className="space-y-4">
             {selectedPage === "Repositories" &&
               repositoryCards.map((card, index) => (
                 <Card

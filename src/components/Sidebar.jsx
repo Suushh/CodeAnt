@@ -30,7 +30,7 @@ const Sidebar = ({ userName, pages, selectedPage, onPageSelect }) => {
 
       {/* ✅ Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-full w-full lg:relative lg:w-[20%] bg-gray-100 border-r border-gray-300 z-50 transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0  w-full lg:relative lg:w-[20%] bg-gray-100 border-r border-gray-300 z-50 transition-transform duration-300 ease-in-out ${
           isSidebarOpen
             ? "translate-y-0"  // For small screens, when opened, slide down vertically
             : "-translate-y-full"  // Initially hidden
@@ -53,7 +53,7 @@ const Sidebar = ({ userName, pages, selectedPage, onPageSelect }) => {
         </div>
 
         {/* ✅ Navigation Links */}
-        <nav className="flex flex-col mt-4 space-y-1">
+        <nav className="flex flex-col  mt-4 space-y-1">
           {pages.map((page) => (
             <div
               key={page}
