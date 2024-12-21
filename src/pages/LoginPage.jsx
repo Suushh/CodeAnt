@@ -74,7 +74,7 @@ const LoginPage = ({ onLoginSuccess }) => {
                 <button
                   key={index}
                   onClick={() => handleOptionClick(option.text)}
-                  className="flex items-center bg-white p-4 rounded-md shadow-md mb-3 w-full border border-gray-300 hover:bg-gray-100"
+                  className="flex items-center justify-center font-medium bg-white p-4 rounded-md shadow-md mb-3 w-full border border-gray-300 hover:bg-gray-100"
                 >
                   <img src={option.icon} alt={option.text} className="h-6 w-6 mr-3" />
                   <span>{option.text}</span>
@@ -85,7 +85,7 @@ const LoginPage = ({ onLoginSuccess }) => {
                 <button
                   key={index}
                   onClick={() => handleOptionClick(option.text)}
-                  className="flex items-center bg-white p-4 rounded-md shadow-md mb-3 w-full border border-gray-300 hover:bg-gray-100"
+                  className="flex items-center bg-white justify-center font-medium p-4 rounded-md shadow-md mb-3 w-full border border-gray-300 hover:bg-gray-100"
                 >
                   <img src={option.icon} alt={option.text} className="h-6 w-6 mr-3" />
                   <span>{option.text}</span>
