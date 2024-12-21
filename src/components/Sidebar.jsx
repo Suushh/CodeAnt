@@ -57,7 +57,7 @@ const Sidebar = ({ userName, pages, selectedPage, onPageSelect, darkMode }) => {
     alt="Logo"
     className="h-12"
     style={{
-      backgroundColor: darkMode ? "white" : "transparent", // Inline style as fallback
+      backgroundColor: darkMode ? "white" : "transparent", 
       marginBottom: 10,
       width: 500
     }}
@@ -82,7 +82,7 @@ const Sidebar = ({ userName, pages, selectedPage, onPageSelect, darkMode }) => {
               className={`p-3 cursor-pointer rounded-lg flex items-center space-x-3 mx-4 ${
                 selectedPage === page
                   ? darkMode
-                    ? "bg-blue-600 text-white"
+                    ? "bg-blue-900 text-white"
                     : "bg-blue-500 text-white"
                   : darkMode
                     ? "text-gray-300 hover:bg-gray-700"

@@ -7,21 +7,19 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Root path renders the LoginPage with a wrapper */}
+        
         <Route path="/" element={<LoginWrapper />} />
-        {/* Dashboard route */}
+    
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );
 }
 
-// Wrapper component to handle navigation logic for LoginPage
 function LoginWrapper() {
   const navigate = useNavigate();
 
   const handleLoginSuccess = () => {
-    // Navigate to the dashboard after successful login
     navigate("/dashboard");
   };
 

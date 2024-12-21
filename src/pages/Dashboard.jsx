@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Sidebar from "../components/Sidebar";
-import Card from "../components/RepoCard"; // Ensure correct import path
+import Card from "../components/RepoCard";
 import Logo from "../assets/Images/Logo.png";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -14,8 +14,8 @@ import {
 
 const Dashboard = () => {
   const [selectedPage, setSelectedPage] = useState("Repositories");
-  const [darkMode, setDarkMode] = useState(false); // State for dark mode
-  const userName = "Shruti"; // Replace with actual user data if dynamic
+  const [darkMode, setDarkMode] = useState(false);
+  const userName = "Shruti";
 
   const pages = [
     "Repositories",
@@ -74,7 +74,6 @@ const Dashboard = () => {
       size: 4096,
       updatedTime: "6 months ago",
     },
-    // Add more card data as needed...
   ];
 
   return (
@@ -88,7 +87,7 @@ const Dashboard = () => {
         pages={pages}
         selectedPage={selectedPage}
         onPageSelect={setSelectedPage}
-        darkMode={darkMode} // Pass darkMode state
+        darkMode={darkMode}
       />
 
       <div className="flex-1 p-4 border border-gray-300 rounded-lg shadow-md m-4">
@@ -98,14 +97,13 @@ const Dashboard = () => {
             alt="Logo"
             className="h-12"
             style={{
-              backgroundColor: darkMode ? "white" : "transparent", // Inline style as fallback
+              backgroundColor: darkMode ? "white" : "transparent",
               padding: darkMode ? "8px" : "0",
               borderRadius: darkMode ? "8px" : "0",
             }}
           />
         </div>
 
-        {/* Header */}
         <header className="flex justify-between items-center mb-4">
           <div>
             <h1 className="text-2xl font-bold">{selectedPage}</h1>
@@ -132,11 +130,12 @@ const Dashboard = () => {
               <FontAwesomeIcon icon={faSyncAlt} />
               <span>Refresh All</span>
             </button>
-            <button className="flex items-center gap-2 px-2 py-1 bg-blue-500 text-white rounded-md">
+            <button className={`flex items-center gap-2 px-2 py-1 rounded-md ${
+  darkMode ? "bg-blue-900 text-white" : "bg-blue-500 text-white"
+}`}>
               <FontAwesomeIcon icon={faPlus} />
               <span>Add Repository</span>
             </button>
-            {/* Dark Mode Toggle */}
             <button
               onClick={() => setDarkMode(!darkMode)}
               className={`flex items-center gap-2 px-6 py-4 rounded-full ${
@@ -144,12 +143,10 @@ const Dashboard = () => {
               }`}
             >
               <FontAwesomeIcon icon={darkMode ? faSun : faMoon} />
-              
             </button>
           </div>
         </header>
 
-        {/* Section for repository cards */}
         <section>
           <div>
             {selectedPage === "Repositories" &&
@@ -162,7 +159,7 @@ const Dashboard = () => {
                   framework={card.framework}
                   size={card.size}
                   updatedTime={card.updatedTime}
-                  darkMode={darkMode} // Optional, if Card needs dark mode
+                  darkMode={darkMode}
                 />
               ))}
           </div>
