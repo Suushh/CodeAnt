@@ -25,7 +25,6 @@ const LoginPage = ({ onLoginSuccess }) => {
     { text: "Sign in with SSO", icon: SSOIcon },
   ];
 
-
   const handleOptionClick = (optionText) => {
     alert(`${optionText}: Logged in successfully!`);
     onLoginSuccess();
@@ -34,11 +33,14 @@ const LoginPage = ({ onLoginSuccess }) => {
 
   return (
     <div className="flex h-screen bg-gray-100">
-      <div className="w-[45%]">
+      {/* Left Sidebar Image (Visible only on large screens) */}
+      <div className="w-[45%] hidden lg:block">
         <img src={sidebarImage} alt="Login Illustration" className="w-full h-full" />
       </div>
-      <div className="w-[60%] flex justify-center items-center">
-        <div className="bg-white shadow-md rounded-lg p-8 w-[80%]">
+
+      {/* Right Login Section */}
+      <div className="w-full lg:w-[55%] flex justify-center items-center px-4">
+        <div className="bg-white shadow-md rounded-lg p-8 w-full lg:w-[80%]">
           <div className="flex justify-center mb-6">
             <img src={Logo} alt="Logo" className="h-10" />
           </div>
